@@ -196,7 +196,7 @@
 </code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    create procedure demo()</span><br><span class="line">begin   </span><br><span class="line">    declare num int;   </span><br><span class="line">    set num=1;   </span><br><span class="line">    while num &lt;= 10000000 do   </span><br><span class="line">        insert into test_user(username,email,password) values(CONCAT(&apos;username_&apos;,num), CONCAT(num ,&apos;@qq.com&apos;), MD5(num));   </span><br><span class="line">        set num=num+1;  </span><br><span class="line">    end while;  </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <pre><code> 然后执行存储过程 call demo();等待程序运行完毕，你就能获得一张内含千万级数据的表啦。得到表之后我们先来运行下查询语句看看时间：
 SELECT id,username,email,password FROM test_user WHERE id=9999987
-</code></pre>   <center><br>&lt;img src=”<a href="http://pnml1a6uh.bkt.clouddn.com/mysql/index/index%EF%BC%881%EF%BC%89.png&quot;" target="_blank" rel="noopener">http://pnml1a6uh.bkt.clouddn.com/mysql/index/index%EF%BC%881%EF%BC%89.png&quot;</a> /width=1000&gt;<br></center>
+</code></pre>   <center><br><img src="http://pnml1a6uh.bkt.clouddn.com/mysql/index/index%EF%BC%881%EF%BC%89.png" width="1000"><br></center>
         
     </article>
     <footer class="cube-excerpt-footer">
