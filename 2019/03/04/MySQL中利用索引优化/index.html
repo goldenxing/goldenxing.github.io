@@ -184,7 +184,8 @@
         <h2 id="一、关于索引"><a href="#一、关于索引" class="headerlink" title="一、关于索引"></a>一、关于索引</h2><p>   索引顾名思义就是检索、指引，就像一本书的目录一样，当我们根据条件查询而没有索引时数据库就会进行全表扫描，也就是一个一个进行查找，如果数据量很少那么不会影响么，但咱们的目标不都是处理千万级甚至上亿级别数据的高端程序员嘛（码畜也要有目标不是），如果没有索引，那么在超大数据量的查询操作中一条数据可能会花费10几秒的时间，这在当前的社会是不被允许的。</p>
 <h2 id="二、索引的类别和语法"><a href="#二、索引的类别和语法" class="headerlink" title="二、索引的类别和语法"></a>二、索引的类别和语法</h2><h6 id="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"><a href="#索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。" class="headerlink" title="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"></a>索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。</h6><ol>
 <li>主键索引：主键索引就是加在主键上的索引，一般在建表设置主键时会自动创建索引。</li>
-<li>普通索引： 创建在非主键列上的索引。</li>
+<li><p>普通索引： 创建在非主键列上的索引。</p>
+</li>
 <li><p>聚合索引： 创建在N个列上的索引。</p>
 <a id="more"></a>
 <h6 id="索引的语法："><a href="#索引的语法：" class="headerlink" title="索引的语法："></a>索引的语法：</h6><p>创建普通索引：ALTER TABLE 表名 ADD INDEX  索引名 (加索引的列)<br>创建聚合索引：ALTER TABLE 表名 ADD INDEX 索引名 (加索引的列1,加索引的列2)<br>查看某张表的索引：SHOW INDEX FROM 表名；<br>删除某张表的索引：DROP INDEX 索引名 ON 表名;</p>
@@ -341,7 +342,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/数据库/">#数据库</a>
         </div>
         
@@ -357,7 +358,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/mysql/">#mysql</a>
         </div>
         
