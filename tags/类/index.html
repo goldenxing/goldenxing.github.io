@@ -12,7 +12,7 @@
     
     
     
-    <title>金光闪闪钻石醒</title>
+    <title>Tags: 类 | 金光闪闪钻石醒</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,126 +162,29 @@
     
     <div class="cube-content">
         <div class="cube-left">
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
+    }
+</style>
+<div class="cube-archives">
+    
+    <div class="cube-archive" style="margin-top: 0;">
+        <h1 class="title">类</h1>
+        
+        <ul class="posts">
             
-<div class="cube-excerpt" id="cube-excerpt-JAVA快速排序">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/29/JAVA快速排序/">JAVA快速排序</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-29
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/算法/" class="cube-excerpt-tag-link">#算法</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>&emsp;&emsp;快速排序是较为常见的算法之一，快速排序在实际排序应用中也是最好的选择，因为它的平均性能非常好，它的期望复杂度为nlgn，另外，它还是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法。</p>
-<p>  下面通过一个例子介绍快速排序算法的思想，假设要对数组a[10]={6，1，2，7，9，3，4，5，10，8}进行排序，首先要在数组中选择一个数作为基准值，这个数可以随意选择，在这里，我们选择数组的第一个元素a[0]=6作为基准值，接下来，我们需要把数组中小于6的数放在左边，大于6的数放在右边，怎么实现呢？</p>
-<p>  我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。<br>
-        
-    </p></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/29/JAVA快速排序/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-JAVA多线程与内部类">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/18/JAVA多线程与内部类/">JAVA多线程与内部类</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-18
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/多线程/" class="cube-excerpt-tag-link">#多线程</a>
-                
-                <a href="/tags/类/" class="cube-excerpt-tag-link">#类</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>今天利用多线程优化日志保存速度时发现对于多线程的一些知识有些遗忘和一些问题，写下博客记录备忘。首先是多线程的创建问题，常用的两种方法创建多线程。</p>
-<h6 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1. 继承Thread类"></a>1. 继承Thread类</h6><p>步骤：①、定义类继承Thread；</p>
-<p>　　　②、复写Thread类中的run方法；目的：将自定义代码存储在run方法，让线程运行 </p>
-<p>　　　③、调用线程的start方法：该方法有两步：启动线程，调用run方法。<br>
-        
-    </p></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/18/JAVA多线程与内部类/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-MySQL中利用索引优化">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/04/MySQL中利用索引优化/">MySQL中利用索引优化</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/mysql/" class="cube-excerpt-tag-link">#mysql</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h2 id="一、关于索引"><a href="#一、关于索引" class="headerlink" title="一、关于索引"></a>一、关于索引</h2><p>   索引顾名思义就是检索、指引，就像一本书的目录一样，当我们根据条件查询而没有索引时数据库就会进行全表扫描，也就是一个一个进行查找，如果数据量很少那么不会影响么，但咱们的目标不都是处理千万级甚至上亿级别数据的高端程序员嘛（码畜也要有目标不是），如果没有索引，那么在超大数据量的查询操作中一条数据可能会花费10几秒的时间，这在当前的社会是不被允许的。</p>
-<h2 id="二、索引的类别和语法"><a href="#二、索引的类别和语法" class="headerlink" title="二、索引的类别和语法"></a>二、索引的类别和语法</h2><h6 id="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"><a href="#索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。" class="headerlink" title="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"></a>索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。</h6><ol>
-<li>主键索引：主键索引就是加在主键上的索引，一般在建表设置主键时会自动创建索引。</li>
-<li><p>普通索引： 创建在非主键列上的索引。</p>
-</li>
-<li><p>聚合索引： 创建在N个列上的索引。</p>
-        
-    </li></ol></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/04/MySQL中利用索引优化/">Read More</a>
-    </footer>
-</div>
-
-
-
-<ul class="cube-pagination cube-pagination-6">
-    
-    <li class="cube-pagination-prev disabled">
-        <span>« Prev</span>
-    </li>
-    
-    
-        
-            
-            <li class="cube-pagination-index disabled">
-                <span>1</span>
+            <li class="post">
+                <a href="/2019/03/18/JAVA多线程与内部类/">JAVA多线程与内部类</a>
             </li>
             
+        </ul>
         
+    </div>
     
-
-    
-    <li class="cube-pagination-next disabled">
-        <span>Next »</span>
-    </li>
-    
-</ul>
-
-<!--其他组件后续添加-->
+</div>
         </div>
         <div class="cube-right">
             
@@ -455,12 +358,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/mysql/">#mysql</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/多线程/">#多线程</a>
         </div>
         
@@ -470,7 +373,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/算法/">#算法</a>
         </div>
         

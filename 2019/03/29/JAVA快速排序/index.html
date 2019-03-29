@@ -12,7 +12,7 @@
     
     
     
-    <title>金光闪闪钻石醒</title>
+    <title>JAVA快速排序 | 金光闪闪钻石醒</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,126 +162,56 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            
-<div class="cube-excerpt" id="cube-excerpt-JAVA快速排序">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/29/JAVA快速排序/">JAVA快速排序</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-29
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/算法/" class="cube-excerpt-tag-link">#算法</a>
-                
-            </div>
+            <div class="cube-article">
+    <h1 class="title">JAVA快速排序</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2019-03-29
         </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/算法/">#算法</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
         
-        
-           <p>&emsp;&emsp;快速排序是较为常见的算法之一，快速排序在实际排序应用中也是最好的选择，因为它的平均性能非常好，它的期望复杂度为nlgn，另外，它还是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法。</p>
+        <p>&emsp;&emsp;快速排序是较为常见的算法之一，快速排序在实际排序应用中也是最好的选择，因为它的平均性能非常好，它的期望复杂度为nlgn，另外，它还是一种稳定的排序方法。快速排序利用分治思想，将待排序数组分成左右两个部分，然后对其分别递归调用快速排序算法。</p>
 <p>  下面通过一个例子介绍快速排序算法的思想，假设要对数组a[10]={6，1，2，7，9，3，4，5，10，8}进行排序，首先要在数组中选择一个数作为基准值，这个数可以随意选择，在这里，我们选择数组的第一个元素a[0]=6作为基准值，接下来，我们需要把数组中小于6的数放在左边，大于6的数放在右边，怎么实现呢？</p>
-<p>  我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。<br>
-        
-    </p></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/29/JAVA快速排序/">Read More</a>
-    </footer>
+<p>  我们设置两个“哨兵”，记为“哨兵i”和“哨兵j”，他们分别指向数组的第一个元素和最后一个元素，即i=0，j=9。首先哨兵j开始出动，哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。<br>  <a id="more"></a><br>  <center><br><img src="http://pnml1a6uh.bkt.clouddn.com/sort/quicksort%E5%BF%AB%E6%8E%921.png" width="1000"><br></center><br>最后哨兵j停在了数字5面前，哨兵i停在了数字7面前。此时就需要交换i和j指向的元素的值。</p>
+<p><center><br><img src="http://pnml1a6uh.bkt.clouddn.com/sort/quicksort%E5%BF%AB%E6%8E%922.png" width="1000"><br></center><br>交换之后的数组变为a[10]={6，1，2，5，9，3，4，7，10，8}</p>
+<p><center><br><img src="http://pnml1a6uh.bkt.clouddn.com/sort/quicksort%E5%BF%AB%E6%8E%923.png" width="1000"><br></center><br>第一次交换至此结束。接下来，由于哨兵i和哨兵j还没有相遇，于是哨兵j继续向前，发现比6小的4之后停下；哨兵i继续向前，发现比6大的9之后停下，两者再进行交换。交换之后的数组变为a[10]={6，1，2，5，4，3，9，7，10，8}。</p>
+<p><center><br><img src="http://pnml1a6uh.bkt.clouddn.com/sort/quicksort%E5%BF%AB%E6%8E%924.png" width="1000"><br></center><br>第二次交换至此结束。接下来，哨兵j继续向前，发小比6小的3停下来；哨兵i继续向前，发现i==j了！！！于是，这一轮的探测就要结束了，此时交换a[i]与基准的值，数组a就以6为分界线，分成了小于6和大于6的左右两部分：a[10]={3，1，2，5，4，6，9，7，10，8}。</p>
+<p><center><br><img src="http://pnml1a6uh.bkt.clouddn.com/sort/quicksort%E5%BF%AB%E6%8E%925.png" width="1000"><br></center><br>至此，第一轮快速排序完全结束，接下来，对于6左边的半部分3，1，2，5，4，执行以上过程；对于6右边的半部分9，7，10，8，执行以上过程，直到不可拆分出新的子序列为止。最终将会得到这样的序列：1 2 3 4 5 6 7 8 9 10，到此，排序完全结束。</p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">    public class QuickSort &#123;</span><br><span class="line">	public QuickSort() &#123;</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private static void sort(int[] a, int low, int high )&#123;</span><br><span class="line">		int i = low;</span><br><span class="line">		int j = high;</span><br><span class="line">		int temp = a[low];</span><br><span class="line">		if(i &gt;=j)&#123;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		while(i != j)&#123;</span><br><span class="line">			while(a[j] &gt;= temp &amp;&amp; j&gt;i)&#123;</span><br><span class="line">				j--;</span><br><span class="line">			&#125;</span><br><span class="line">			while(a[i] &lt;= temp &amp;&amp; i&lt;j)&#123;</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			if(i &lt; j)&#123;</span><br><span class="line">				int flag = a[i];</span><br><span class="line">				a[i] = a[j];</span><br><span class="line">				a[j] = flag;</span><br><span class="line">//				System.out.println(a[i]+&quot;--&quot;+a[j]+&quot;交换&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		int flag2 = a[low];</span><br><span class="line">		a[low] = a[i];</span><br><span class="line">		a[i] = flag2;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		sort(a, low, i-1);</span><br><span class="line">		sort(a, i+1, high);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		int a[] = new int[]&#123;</span><br><span class="line">				1,4,7,2,3,6,5,8</span><br><span class="line">		&#125;;</span><br><span class="line">		sort(a, 0, 7);</span><br><span class="line">		for(int k : a)&#123;</span><br><span class="line">			System.out.println(k);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
 </div>
 
-<div class="cube-excerpt" id="cube-excerpt-JAVA多线程与内部类">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/18/JAVA多线程与内部类/">JAVA多线程与内部类</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-18
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/多线程/" class="cube-excerpt-tag-link">#多线程</a>
-                
-                <a href="/tags/类/" class="cube-excerpt-tag-link">#类</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
+<div class="cube-article-nav">
+    <ul>
         
         
-           <p>今天利用多线程优化日志保存速度时发现对于多线程的一些知识有些遗忘和一些问题，写下博客记录备忘。首先是多线程的创建问题，常用的两种方法创建多线程。</p>
-<h6 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1. 继承Thread类"></a>1. 继承Thread类</h6><p>步骤：①、定义类继承Thread；</p>
-<p>　　　②、复写Thread类中的run方法；目的：将自定义代码存储在run方法，让线程运行 </p>
-<p>　　　③、调用线程的start方法：该方法有两步：启动线程，调用run方法。<br>
+        <li class="next">
+            <a href="/2019/03/18/JAVA多线程与内部类/">
+                JAVA多线程与内部类
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
         
-    </p></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/18/JAVA多线程与内部类/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-MySQL中利用索引优化">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2019/03/04/MySQL中利用索引优化/">MySQL中利用索引优化</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2019-03-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/mysql/" class="cube-excerpt-tag-link">#mysql</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <h2 id="一、关于索引"><a href="#一、关于索引" class="headerlink" title="一、关于索引"></a>一、关于索引</h2><p>   索引顾名思义就是检索、指引，就像一本书的目录一样，当我们根据条件查询而没有索引时数据库就会进行全表扫描，也就是一个一个进行查找，如果数据量很少那么不会影响么，但咱们的目标不都是处理千万级甚至上亿级别数据的高端程序员嘛（码畜也要有目标不是），如果没有索引，那么在超大数据量的查询操作中一条数据可能会花费10几秒的时间，这在当前的社会是不被允许的。</p>
-<h2 id="二、索引的类别和语法"><a href="#二、索引的类别和语法" class="headerlink" title="二、索引的类别和语法"></a>二、索引的类别和语法</h2><h6 id="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"><a href="#索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。" class="headerlink" title="索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。"></a>索引的类别：mysql中的常用索引有三种：主键索引、普通索引、聚合索引。</h6><ol>
-<li>主键索引：主键索引就是加在主键上的索引，一般在建表设置主键时会自动创建索引。</li>
-<li><p>普通索引： 创建在非主键列上的索引。</p>
-</li>
-<li><p>聚合索引： 创建在N个列上的索引。</p>
-        
-    </li></ol></article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2019/03/04/MySQL中利用索引优化/">Read More</a>
-    </footer>
+    </ul>
 </div>
 
 
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
 
-<ul class="cube-pagination cube-pagination-6">
-    
-    <li class="cube-pagination-prev disabled">
-        <span>« Prev</span>
-    </li>
-    
-    
-        
-            
-            <li class="cube-pagination-index disabled">
-                <span>1</span>
-            </li>
-            
-        
-    
 
-    
-    <li class="cube-pagination-next disabled">
-        <span>Next »</span>
-    </li>
-    
-</ul>
 
-<!--其他组件后续添加-->
         </div>
         <div class="cube-right">
             
@@ -470,7 +400,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/算法/">#算法</a>
         </div>
         
