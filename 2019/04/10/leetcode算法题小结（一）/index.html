@@ -12,7 +12,7 @@
     
     
     
-    <title>JAVA多线程与内部类 | 金光闪闪钻石醒</title>
+    <title>leetcode算法题小结（一） | 金光闪闪钻石醒</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -174,39 +174,71 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">JAVA多线程与内部类</h1>
+    <h1 class="title">leetcode算法题小结（一）</h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2019-03-18
+            2019-04-10
         </div>
         <div class="cube-article-tags">
     <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
     
-    <a href="/tags/多线程/">#多线程</a>
-    
-    <a href="/tags/类/">#类</a>
+    <a href="/tags/算法/">#算法</a>
     
 </div>
     </div>
     
     <div class="cube-article-content cube-markdown">
         
-        <p>今天利用多线程优化日志保存速度时发现对于多线程的一些知识有些遗忘和一些问题，写下博客记录备忘。首先是多线程的创建问题，常用的两种方法创建多线程。</p>
-<h6 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1. 继承Thread类"></a>1. 继承Thread类</h6><p>步骤：①、定义类继承Thread；</p>
-<p>　　　②、复写Thread类中的run方法；目的：将自定义代码存储在run方法，让线程运行 </p>
-<p>　　　③、调用线程的start方法：该方法有两步：启动线程，调用run方法。<br><a id="more"></a><br>&emsp;&emsp;如图为利用线程进行utm日志的存储</p>
-<center><br><img src="http://wx3.sinaimg.cn/large/0060etE8ly1g1veegiie1j30ga04j0so.jpg" width="1000"><br></center>
-
-<h6 id="2-实现Runnable接口"><a href="#2-实现Runnable接口" class="headerlink" title="2. 实现Runnable接口"></a>2. 实现Runnable接口</h6><p>&emsp;&emsp;&emsp;①、定义类实现Runnable接口</p>
-<p>&emsp;&emsp;&emsp;②、覆盖Runnable接口中的run方法将线程要运行的代码放在该run方法中。</p>
-<p>&emsp;&emsp;&emsp;③、通过Thread类建立线程对象。</p>
-<p>&emsp;&emsp;&emsp;④、将Runnable接口的子类对象作为实际参数传递给Thread类的构造函数。自定义的run方法所属的对象是Runnable接口的子类对象。所以要让线程执行指定对象的run方法就要先明确run方法所属对象</p>
-<p>&emsp;&emsp;&emsp;⑤、调用Thread类的start方法开启线程并调用Runnable接口子类的run方法。</p>
-<p>&emsp;&emsp;&emsp;如图示，涉及公司代码参数部分已打码~~</p>
-<p><center><br><img src="http://wx1.sinaimg.cn/large/0060etE8ly1g1veer4iu0j30ys07gmxl.jpg" width="1000"><br></center><br>&emsp;&emsp;&emsp;先来说说今天遇到的问题，在多线程的使用过程中，因为线程相当于内部类，所以在调用外部类参数是出现了报错，让我在参数定义时加上fianl修饰，</p>
+        <p>&emsp;&emsp;今天起开始刷力扣的编程题，本以为这种题会很枯燥的感觉，但是做起来的时候发现其实很有趣，考验思维能力和逻辑思维，希望通过这种练习并总结能够提高自己的编程能力。由缓至急，循循而进，加油~</p>
+<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">两数之和</a></h3><p>题目如下，简单难度</p>
+<p><center><br><img src="http://wx4.sinaimg.cn/large/0060etE8ly1g1xlqfm55kj30yp08yq3h.jpg" width="1000"><br></center><br><a id="more"></a><br>解法一：暴力法<br>遍历每个元素 x，并查找是否存在一个值与 target - x相等的目标元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">    for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        for (int j = i + 1; j &lt; nums.length; j++) &#123;</span><br><span class="line">            if (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                return new int[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度:O(n^2)</li>
+</ul>
+<ul>
+<li>空间复杂度:O(1)</li>
+</ul>
+<p>最简单也是最差的方法，时间复杂度过高，在处理大数据量的数据时性能差距明显。</p>
+<p>解法二：两次哈希表<br>将数组的对应关系写进哈希表，以空间换时间，毕竟现在硬件条件好空间不值钱了(╯‵□′)╯︵┻━┻。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        int complement = target - nums[i];</span><br><span class="line">        if (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            return new int[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度：O(n)我们把包含有 n 个元素的列表遍历两次。由于哈希表将查找时间缩短到 O(1) ，所以时间复杂度为 O(n)</li>
+</ul>
+<ul>
+<li>空间复杂度：O(n)</li>
+</ul>
+<p>解法三: 一次哈希表<br>这个应该是程序员的正常思维了，边循环边查找，找到就返回，节省了一些操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    for (int i = 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        int complement = target - nums[i];</span><br><span class="line">        if (map.containsKey(complement)) &#123;</span><br><span class="line">            return new int[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度：O(n)在复杂度方面基本类似</li>
+</ul>
+<ul>
+<li>空间复杂度：O(n)</li>
+</ul>
+<h3 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">整数反转</a></h3><p>题目如下，难度简单</p>
+<p><center><br><img src="http://wx4.sinaimg.cn/large/0060etE8ly1g1xncbnrz8j30za0htjs6.jpg" width="1000"><br></center><br>利用“%”取余和“/”除通过数学方法来达到本题的目的。需要注意的是int类型的范围，小伙子考虑问题要全面啊o(<em>￣︶￣</em>)o，int类型的范围是-2^31——2^31-1也就是-2147483648——2147483647。这里我就懵了一下，正常超过范围的int值不是应该直接报错了嘛，为什么还要考虑溢出，后来想了想，如果传进来的是2147483646的话，它的反转数就是6463847412，这就超过了int类型的范围，从而造成溢出错误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int reverse(int x) &#123;</span><br><span class="line">        int rev = 0;</span><br><span class="line">        while (x != 0) &#123;</span><br><span class="line">            int pop = x % 10;</span><br><span class="line">            x /= 10;</span><br><span class="line">            if (rev &gt; Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 &amp;&amp; pop &gt; 7)) return 0;</span><br><span class="line">            if (rev &lt; Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 &amp;&amp; pop &lt; -8)) return 0;</span><br><span class="line">            rev = rev * 10 + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        return rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>简单来说就是取余取到最后一位然后把它乘10再加上下一位，除法取整控制循环。</p>
+<ul>
+<li>时间复杂度：O(log(x))</li>
+</ul>
+<ul>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h3 id="回文数"><a href="#回文数" class="headerlink" title="回文数"></a><a href="https://leetcode-cn.com/problems/palindrome-number/" target="_blank" rel="noopener">回文数</a></h3><p>题目如下，难度简单</p>
+<p><center><br><img src="http://wx4.sinaimg.cn/large/0060etE8ly1g1xnz72co3j30yl0j0gmm.jpg" width="1000"><br></center><br>看到这道题，我的第一想法是利用上一题的整数反转，把给的数反转后判断与原来的数值是否相等。再判断其中几种特殊情况就行同时还要注意溢出问题。事实证明想法可行，代码如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isPalindrome(int x) &#123;</span><br><span class="line">        int rev = 0;</span><br><span class="line">        int value = x;</span><br><span class="line">        while(x!=0)&#123;</span><br><span class="line">            int pop = x%10;</span><br><span class="line">            x /=10;</span><br><span class="line">			if (rev &gt; Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 &amp;&amp; pop &gt; 7))</span><br><span class="line">				return false;</span><br><span class="line">			if (rev &lt; Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 &amp;&amp; pop &lt; -8))</span><br><span class="line">				return false;</span><br><span class="line">            rev = rev * 10 + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        if(value == rev )&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度应该是：O(log(x))</li>
+</ul>
+<p>官方的解答还是比我的精进，只需要判断一半的数字是不是回文数，就断定整个数是不是回文数。例如12321只需要反转123跟后面的321比较即可，但是我们又怎么知道反转数字的位数是不是达到了原数字位数的一半了呢？</p>
+<p>我们将原始数字除以 10，然后给反转后的数字乘上 10，所以，当原始数字小于反转后的数字时，就意味着我们已经处理了一半位数的数字。代码如下，一看就懂O(∩_∩)O。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public bool IsPalindrome(int x) &#123;</span><br><span class="line">        // 特殊情况：</span><br><span class="line">        // 如上所述，当 x &lt; 0 时，x 不是回文数。</span><br><span class="line">        // 同样地，如果数字的最后一位是 0，为了使该数字为回文，</span><br><span class="line">        // 则其第一位数字也应该是 0</span><br><span class="line">        // 只有 0 满足这一属性</span><br><span class="line">        if(x &lt; 0 || (x % 10 == 0 &amp;&amp; x != 0)) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int revertedNumber = 0;</span><br><span class="line">        while(x &gt; revertedNumber) &#123;</span><br><span class="line">            revertedNumber = revertedNumber * 10 + x % 10;</span><br><span class="line">            x /= 10;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 当数字长度为奇数时，我们可以通过 revertedNumber/10 去除处于中位的数字。</span><br><span class="line">        // 例如，当输入为 12321 时，在 while 循环的末尾我们可以得到 x = 12，revertedNumber = 123，</span><br><span class="line">        // 由于处于中位的数字不影响回文（它总是与自己相等），所以我们可以简单地将其去除。</span><br><span class="line">        return x == revertedNumber || x == revertedNumber/10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>时间复杂度：O(log10(n)), 对于每次迭代，我们会将输入除以10，因此时间复杂度为 O(log10(n).</li>
+</ul>
+<ul>
+<li>空间复杂度：O(1)O(1)。</li>
+</ul>
+<p>水平有限，如有错误请文明的评论指出，谢谢，日积月累，积少成多，加油！</p>
 
     </div>
 </div>
@@ -214,17 +246,10 @@
 <div class="cube-article-nav">
     <ul>
         
-        <li class="prev">
-            <a href="/2019/03/29/JAVA快速排序/">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                JAVA快速排序
-            </a>
-        </li>
-        
         
         <li class="next">
-            <a href="/2019/03/04/MySQL中利用索引优化/">
-                MySQL中利用索引优化
+            <a href="/2019/03/29/JAVA快速排序/">
+                JAVA快速排序
                 <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
@@ -432,7 +457,7 @@ new Valine({
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/java/">#java</a>
         </div>
         
