@@ -12,7 +12,7 @@
     
     
     
-    <title>Tags: mysql | 金光闪闪钻石醒</title>
+    <title>JAVA多线程与内部类 | 金光闪闪钻石醒</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -173,29 +173,88 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">JAVA多线程与内部类</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">mysql</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2019/20190304mysqlindex/">MySQL中利用索引优化</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2019-03-18
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/多线程/">#多线程</a>
+    
+    <a href="/tags/类/">#类</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <p>今天利用多线程优化日志保存速度时发现对于多线程的一些知识有些遗忘和一些问题，写下博客记录备忘。首先是多线程的创建问题，常用的两种方法创建多线程。</p>
+<h6 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1. 继承Thread类"></a>1. 继承Thread类</h6><p>步骤：①、定义类继承Thread；</p>
+<p>　　　②、复写Thread类中的run方法；目的：将自定义代码存储在run方法，让线程运行 </p>
+<p>　　　③、调用线程的start方法：该方法有两步：启动线程，调用run方法。<br><a id="more"></a><br>&emsp;&emsp;如图为利用线程进行utm日志的存储</p>
+<center><br><img src="http://wx3.sinaimg.cn/large/0060etE8ly1g1veegiie1j30ga04j0so.jpg" width="1000"><br></center>
+
+<h6 id="2-实现Runnable接口"><a href="#2-实现Runnable接口" class="headerlink" title="2. 实现Runnable接口"></a>2. 实现Runnable接口</h6><p>&emsp;&emsp;&emsp;①、定义类实现Runnable接口</p>
+<p>&emsp;&emsp;&emsp;②、覆盖Runnable接口中的run方法将线程要运行的代码放在该run方法中。</p>
+<p>&emsp;&emsp;&emsp;③、通过Thread类建立线程对象。</p>
+<p>&emsp;&emsp;&emsp;④、将Runnable接口的子类对象作为实际参数传递给Thread类的构造函数。自定义的run方法所属的对象是Runnable接口的子类对象。所以要让线程执行指定对象的run方法就要先明确run方法所属对象</p>
+<p>&emsp;&emsp;&emsp;⑤、调用Thread类的start方法开启线程并调用Runnable接口子类的run方法。</p>
+<p>&emsp;&emsp;&emsp;如图示，涉及公司代码参数部分已打码~~</p>
+<p><center><br><img src="http://wx1.sinaimg.cn/large/0060etE8ly1g1veer4iu0j30ys07gmxl.jpg" width="1000"><br></center><br>&emsp;&emsp;&emsp;先来说说今天遇到的问题，在多线程的使用过程中，因为线程相当于内部类，所以在调用外部类参数是出现了报错，让我在参数定义时加上fianl修饰，</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2019/20190329quicksort/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                JAVA快速排序
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2019/20190304mysqlindex/">
+                MySQL中利用索引优化
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+<div id="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+new Valine({
+    el: '#comment' ,
+    notify: false, 
+    verify: true, 
+    appId: 'YVCR9wnjogxu8tNPFrlopUe9-gzGzoHsz',
+    appKey: 'au8tFYdpmcFFprf1hVFsGifx',
+    placeholder: 'ヾﾉ≧∀≦)o欢迎评论! 你可以在上面填写自己的邮箱以便我第一时间回复~',
+    path: window.location.pathname, 
+    avatar: 'mm' 
+});
+</script>
+
+
+
+
+
         </div>
         <div class="cube-right">
             
@@ -399,12 +458,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/多线程/">#多线程</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/类/">#类</a>
         </div>
         
