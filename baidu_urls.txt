@@ -1,4 +1,4 @@
-http://www.diamondxing.com/2019/20190410leetcodeone/
-http://www.diamondxing.com/2019/20190329quicksort/
-http://www.diamondxing.com/2019/20190318-multithreading/
-http://www.diamondxing.com/2019/20190304mysqlindex/
+http://www.diamondxing.com/20190410leetcodeone/
+http://www.diamondxing.com/20190329quicksort/
+http://www.diamondxing.com/20190318-multithreading/
+http://www.diamondxing.com/20190304mysqlindex/
